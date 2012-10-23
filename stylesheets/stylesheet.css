@@ -1,0 +1,34 @@
+$text_color: #25020F;
+$background_color: #8F8F8F;
+$button_color: #9E1E4C;
+$off_white: #ECECEC;
+
+/*@import 'compass/css3';*/
+
+body {
+  background: $off_white;
+  color: $text_color;
+}
+
+.page {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+  width: 450px;
+  margin: 0 0 0 25px;
+}
+
+.right {
+  float: left;
+  width: 450px;
+  margin: 0 0 0 25px;
+}
+
+.message {
+  width: 250px;
+  height: 150px;
+  /*@include border-radius(15px);*/
+}

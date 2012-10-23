@@ -1,0 +1,33 @@
+/*@import 'compass/css3';*/
+/* line 8, /home/solomon/Programming/assorted/elimessage/views/sass/screen.scss */
+body {
+  background: #ececec;
+  color: #25020f;
+}
+
+/* line 13, /home/solomon/Programming/assorted/elimessage/views/sass/screen.scss */
+.page {
+  width: 950px;
+  margin: 0 auto;
+}
+
+/* line 18, /home/solomon/Programming/assorted/elimessage/views/sass/screen.scss */
+.left {
+  float: left;
+  width: 450px;
+  margin: 0 0 0 25px;
+}
+
+/* line 24, /home/solomon/Programming/assorted/elimessage/views/sass/screen.scss */
+.right {
+  float: left;
+  width: 450px;
+  margin: 0 0 0 25px;
+}
+
+/* line 30, /home/solomon/Programming/assorted/elimessage/views/sass/screen.scss */
+.message {
+  width: 250px;
+  height: 150px;
+  /*@include border-radius(15px);*/
+}

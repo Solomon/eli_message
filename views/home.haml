@@ -1,14 +1,15 @@
 %h2
-  Set up your Eli Message Here
+  Set up your Eli Message 
 
+.left
+  %canvas#e{:width => '450', :height => '450'}
 
-%canvas#e{:width => '500', :height => '500'}
+.right
+  %form#message
+    %textarea.message
 
-%form#message
-  %textarea.message
-
-.add
-  add this message
-.clear
-  Clear the message
--#%img{ :src => "http://www.personal.psu.edu/afr3/blogs/SIOW/elephant.jpg", :class => 'pic' }
+  .add
+    add this message
+  .clear
+    Clear the message
+  -#%img{ :src => "http://www.personal.psu.edu/afr3/blogs/SIOW/elephant.jpg", :class => 'pic' }

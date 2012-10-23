@@ -11,19 +11,19 @@ $(document).ready(function() {
     var img = new Image();
     img.src = "http://images.nationalgeographic.com/wpf/media-live/photos/000/090/cache/african-elephant-standing_9033_600x450.jpg";
     img.onload = function(){
-      ctx.drawImage(this,0,0,500,500);
+      ctx.drawImage(this,0,0,450,450);
     }
   }
 
   function typeMessage(ctx, message){
     ctx.fillStyle = 'black';
-    ctx.font = '32px sans-serif';
+    ctx.font = '24px sans-serif';
     //ctx.fillText(message,50,50);
-    wrapText(ctx, message, 50, 50, 400, 40);
+    wrapText(ctx, message, 50, 50, 350, 40);
   }
 
   function clearMessage(ctx){
-    ctx.clearRect(0,0,500,500);
+    ctx.clearRect(0,0,450,450);
     drawEli(ctx);
   }
 
@@ -51,6 +51,7 @@ $(document).ready(function() {
 
   // Bind typing enter in the text box to writing the message
   $('.add').on("click", function(){
+    console.log('working');
     var ctx = getCanvasCtx();
     var message = $('.message').val();
     typeMessage(ctx, message);
