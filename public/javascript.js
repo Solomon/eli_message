@@ -16,10 +16,10 @@ $(document).ready(function() {
   }
 
   function typeMessage(ctx, message){
-    ctx.fillStyle = 'black';
-    ctx.font = '24px sans-serif';
+    ctx.fillStyle = '#25020F';
+    ctx.font = '18px sans-serif';
     //ctx.fillText(message,50,50);
-    wrapText(ctx, message, 50, 50, 350, 40);
+    wrapText(ctx, message, 50, 50, 350, 27);
   }
 
   function clearMessage(ctx){
@@ -31,9 +31,9 @@ $(document).ready(function() {
   }
 
   function wrapText(context, text, x, y, maxWidth, lineHeight){
-    var pars = text.split("\n");
-    for (var p = 0; p < pars.length; p++){
-      var words = pars[p].split(" ");
+    var paragraphs = text.split("\n");
+    for (var p = 0; p < paragraphs.length; p++){
+      var words = paragraphs[p].split(" ");
       var line = "";
       for (var n = 0; n < words.length; n++){
         var testLine = line + words[n] + " ";

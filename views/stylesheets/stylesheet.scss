@@ -4,6 +4,30 @@ $button_color: #9E1E4C;
 $off_white: #ECECEC;
 
 /*@import 'compass/css3';*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin linear-gradient($from, $to) {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image:    -moz-linear-gradient(top, $from, $to);
+  background-image:     -ms-linear-gradient(top, $from, $to);
+  background-image:      -o-linear-gradient(top, $from, $to);
+}
+
+@mixin button-style($base-color) {
+  background-color: $base-color;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: $off_white;
+  padding: 4px 16px;
+  text-decoration: none;
+  @include border-radius(5px);
+  margin: 5px;
+}
 
 body {
   background: $off_white;
@@ -27,8 +51,26 @@ body {
   margin: 0 0 0 25px;
 }
 
+.top {
+  margin: 0 0 30px 25px;
+}
+
+.instruction {
+  font-size: 16px;
+  line-height: 24px;
+  color: $text_color;
+}
+
 .message {
-  width: 250px;
-  height: 150px;
-  /*@include border-radius(15px);*/
+  width: 300px;
+  height: 320px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  @include border-radius(15px);
+}
+
+.add, .clear {
+  float: left;
+  @include button-style($text_color);
 }

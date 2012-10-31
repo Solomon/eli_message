@@ -1,5 +1,12 @@
-%h2
-  Set up your Eli Message 
+.top
+  %h2
+    Shhhh... This website is a secret, so don't tell Kelly!
+  .instruction
+    Write your message to Kelly in the box below, and click preview to see it on the elephant.
+    %br
+    When you're done, click the send to Kelly button.
+    %br
+    Make sure to sign your name, so she knows who it's from. I will give her the messages on our wedding night.
 
 .left
   %canvas#e{:width => '450', :height => '450'}
@@ -8,8 +15,8 @@
   %form#message
     %textarea.message
 
-  .add
-    add this message
-  .clear
-    Clear the message
+  %a.add{:href => "javascript:void(0)"}
+    Preview
+  %a.clear{:href => "javascript:void(0)"}
+    Clear
   -#%img{ :src => "http://www.personal.psu.edu/afr3/blogs/SIOW/elephant.jpg", :class => 'pic' }
