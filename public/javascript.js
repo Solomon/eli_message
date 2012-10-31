@@ -27,23 +27,30 @@ $(document).ready(function() {
     drawEli(ctx);
   }
 
+  function splitLines(context, text, x, y, maxWidth, lineHeight){
+  }
+
   function wrapText(context, text, x, y, maxWidth, lineHeight){
-    var words = text.split(" ");
-    var line = "";
-    for (var n = 0; n < words.length; n++){
-      var testLine = line + words[n] + " ";
-      var metrics = context.measureText(testLine);
-      var testWidth = metrics.width;
-      if (testWidth > maxWidth) {
-        context.fillText(line, x, y);
-        line = words[n] + " ";
-        y += lineHeight;
+    var pars = text.split("\n");
+    for (var p = 0; p < pars.length; p++){
+      var words = pars[p].split(" ");
+      var line = "";
+      for (var n = 0; n < words.length; n++){
+        var testLine = line + words[n] + " ";
+        var metrics = context.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth) {
+          context.fillText(line, x, y);
+          line = words[n] + " ";
+          y += lineHeight;
+        }
+        else {
+          line = testLine;
+        }
       }
-      else {
-        line = testLine;
-      }
+      context.fillText(line, x, y);
+      y += lineHeight;
     }
-    context.fillText(line, x, y);
   }
 
   var ctx = getCanvasCtx();
