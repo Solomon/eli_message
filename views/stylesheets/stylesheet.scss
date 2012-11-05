@@ -70,7 +70,11 @@ body {
   @include border-radius(15px);
 }
 
-.add, .clear {
+.add, .clear, .new_eli {
   float: left;
   @include button-style($text_color);
+}
+
+.eli_picker {
+  margin: 0 0 25px 25px;
 }
