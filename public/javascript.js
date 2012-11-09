@@ -6,13 +6,13 @@ $(document).ready(function() {
     return $('#e')[0].getContext('2d');
   }
 
-  function getEliUrl(number){
-    return "https://s3.amazonaws.com/eli_message/elephants/" + number + ".jpeg"
+  function getEliSource(number){
+    return "elis/" + number + ".jpg"
   }
 
   function drawEli(ctx){
     var img = new Image();
-    img.src = getEliUrl(current_eli);
+    img.src = getEliSource(current_eli);
     img.onload = function(){
       ctx.drawImage(this,0,0,450,450);
     }
@@ -57,9 +57,15 @@ $(document).ready(function() {
   }
 
   function newEli(ctx){
-    var number = Math.floor(Math.random()*11)+1;
+    var number = Math.floor(Math.random()*10)+1;
     current_eli = number;
     drawEli(ctx);
+  }
+
+  function saveEli(canvas){
+    var url = canvas.toDataURL();
+    console.log(url);
+    window.location.href = url.replace('image/png', "image/octet-stream");
   }
 
   var ctx = getCanvasCtx();
@@ -76,6 +82,12 @@ $(document).ready(function() {
   $('.clear').on('click', function(){
     var ctx = getCanvasCtx();
     clearMessage(ctx);
+  })
+
+  // Save the Eli
+  $('.download').on('click', function(){
+    var canvas = $('#e')[0];
+    saveEli(canvas);
   })
 
   // Get a new Eli
