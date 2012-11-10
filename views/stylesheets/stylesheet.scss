@@ -70,7 +70,7 @@ body {
   @include border-radius(15px);
 }
 
-.add, .clear, .new_eli {
+.add, .clear, .new_eli, .download {
   float: left;
   @include button-style($text_color);
 }
