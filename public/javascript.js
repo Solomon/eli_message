@@ -57,14 +57,13 @@ $(document).ready(function() {
   }
 
   function newEli(ctx){
-    var number = Math.floor(Math.random()*10)+1;
+    var number = Math.floor(Math.random()*16)+1;
     current_eli = number;
     drawEli(ctx);
   }
 
   function saveEli(canvas){
     var url = canvas.toDataURL();
-    console.log(url);
     window.location.href = url.replace('image/png', "image/octet-stream");
   }
 
