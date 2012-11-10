@@ -57,7 +57,7 @@ $(document).ready(function() {
   }
 
   function newEli(ctx){
-    var number = Math.floor(Math.random()*16)+1;
+    var number = Math.floor(Math.random()*20)+1;
     current_eli = number;
     drawEli(ctx);
   }
