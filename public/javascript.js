@@ -100,7 +100,9 @@ $(document).ready(function() {
 
   // Change the font color
   $('.color').on('click', function(){
+    $('.current_color').removeClass('current_color');
     font_color = this.text.trim();
+    $(this).addClass('current_color');
     var ctx = getCanvasCtx();
     clearMessage(ctx);
   })
