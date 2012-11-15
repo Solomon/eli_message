@@ -1,4 +1,5 @@
 var current_eli = 7;
+var font_color = 'blue';
 
 $(document).ready(function() {
 
@@ -20,7 +21,7 @@ $(document).ready(function() {
 
 
   function typeMessage(ctx, message){
-    ctx.fillStyle = '#25020F';
+    ctx.fillStyle = font_color;
     ctx.font = '18px sans-serif';
     wrapText(ctx, message, 50, 50, 350, 27);
   }
@@ -95,5 +96,12 @@ $(document).ready(function() {
     current_eli = number;
     var ctx = getCanvasCtx()
     newEli(ctx)
+  })
+
+  // Change the font color
+  $('.color').on('click', function(){
+    font_color = this.text.trim();
+    var ctx = getCanvasCtx();
+    clearMessage(ctx);
   })
 });
